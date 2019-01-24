@@ -16,5 +16,3 @@ RUN apk update \
     && echo "error_reporting = E_ALL" >> /usr/local/etc/php/conf.d/zz-custom.ini \
     && echo "display_errors = on" >> /usr/local/etc/php/conf.d/zz-custom.ini \
     && apk del $PHPIZE_DEPS
-
-CMD ["php", "-a"]
