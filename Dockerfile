@@ -2,8 +2,7 @@ FROM outlandish/sdw-php
 
 COPY --from=composer:1.5 /usr/bin/composer /usr/bin/composer
 
-RUN apk update \
-    && apk add --no-cache $PHPIZE_DEPS \
+RUN apk add --no-cache $PHPIZE_DEPS \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
